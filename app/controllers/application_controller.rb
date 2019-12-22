@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
   
   post "/recipes" do
     @recipe = Recipe.create(params)
-    redirect "/recipes/#{@recipe.id}"
+    redirect to "/recipes/#{@recipe.id}"
   end
   
   get "/recipes/:id" do
@@ -23,6 +23,11 @@ class ApplicationController < Sinatra::Base
   get "/recipes/:id/edit" do
     @recipe = Recipe.find_by(params)
     erb :edit
+  end
+  
+  get "/recipes/:id" do
+    binding.pry
+    redirect to "/recipes/:id"
   end
   
   get "/recipes" do

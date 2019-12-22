@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
   
-  post "/recipes/:id" do
+  patch "/recipes/:id" do
     binding.pry
     redirect to "/recipes/:id"
   end

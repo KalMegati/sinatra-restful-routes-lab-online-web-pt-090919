@@ -12,6 +12,7 @@ class ApplicationController < Sinatra::Base
   
   post "/recipes/new" do
     @recipe = Recipe.create(params)
+    binding.pry
     redirect "/recipes/:id"
   end
   

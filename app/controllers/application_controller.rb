@@ -31,8 +31,7 @@ class ApplicationController < Sinatra::Base
   end
   
   delete "/recipes/:id" do
-    binding.pry
-    Recipe.de(params)
+    Recipe.delete(params[:id])
   end
   
   get "/recipes" do
